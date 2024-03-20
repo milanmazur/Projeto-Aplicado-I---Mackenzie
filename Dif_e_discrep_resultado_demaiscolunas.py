@@ -22,8 +22,10 @@ difediscresultadomenvalor()
 
 
 plt.figure(figsize=(10, 6))
-plt.barh(objetos, discrepancias, color=['green' if diff >= 0 else 'red' for diff in discrepancias])
-plt.xlabel('Discrepância entre Resultado e Menor Valor Pré-Resultado (%)')
+plt.barh(objetos, discrepancias, color=['red' if diff >= 0 else 'blue' for diff in discrepancias])
+plt.xlabel('''Discrepância entre Resultado e Menor Valor Pré-Resultado (%)
+Em azul: Resultado da Licitação ficou abaixo do Menor Valor Pré-licitação
+Em vermelho: Resultado da Licitação ficou acima do Menor Valor Pré-licitação''')
 plt.ylabel('Objeto')
 plt.title('Discrepância entre Resultado da Licitação e Menor Valor Pré-Resultado por Objeto')
 plt.grid(axis='x')
