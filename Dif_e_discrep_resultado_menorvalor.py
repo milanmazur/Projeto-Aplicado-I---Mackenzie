@@ -19,8 +19,8 @@ def difediscresultadomenvalor():
         print(f'Objeto: {objeto}, Diferença: {diferencaformatada}, Percentual de Discrepância: {percentualdediscrepancia:.2f}%')
 print('\n Diferença entre o Resultado e o Menor valor pré resultado da licitação e Discrepância: \n')
 difediscresultadomenvalor()
-
-
+objetos.reverse()
+discrepancias.reverse()
 plt.figure(figsize=(10, 6))
 plt.barh(objetos, discrepancias, color=['red' if diff >= 0 else 'blue' for diff in discrepancias])
 plt.xlabel('''Discrepância entre Resultado e Menor Valor Pré-Resultado (%)
@@ -29,5 +29,6 @@ Em vermelho: Resultado da Licitação ficou acima do Menor Valor Pré-licitaçã
 plt.ylabel('Objeto')
 plt.title('Discrepância entre Resultado da Licitação e Menor Valor Pré-Resultado por Objeto')
 plt.grid(axis='x')
+plt.xlim(-100, 100)
 plt.tight_layout()
 plt.show()

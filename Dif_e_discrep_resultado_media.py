@@ -19,8 +19,8 @@ def difediscresultadomedia():
         print(f'Objeto: {objeto}, Diferença: {diferencaformatada}, Percentual de Discrepância: {percentualdediscrepancia:.2f}%')
 print('\n Diferença entre o Resultado e a Média pré resultado da licitação e Discrepância: \n')
 difediscresultadomedia()
-
-
+objetos.reverse()
+discrepancias.reverse()
 plt.figure(figsize=(10, 6))
 plt.barh(objetos, discrepancias, color=['red' if diff >= 0 else 'blue' for diff in discrepancias])
 plt.xlabel('''Discrepância entre Resultado e Média Pré-Resultado (%)
@@ -29,5 +29,6 @@ Em vermelho: Resultado da Licitação ficou acima da Média Pré-licitação''')
 plt.ylabel('Objeto')
 plt.title('Discrepância entre Resultado da Licitação e Média Pré-Resultado por Objeto')
 plt.grid(axis='x')
+plt.xlim(-100, 100)
 plt.tight_layout()
 plt.show()
